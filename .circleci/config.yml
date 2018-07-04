@@ -37,6 +37,9 @@ jobs:
       - run: npm test
 
   deploy:
+  docker:
+      # specify the version you desire here
+      - image: circleci/node:7.10
     working_directory: ~/repo
     environment:
     steps:
@@ -46,5 +49,16 @@ jobs:
           command: |
             npm run package_and_deploy
 
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
 
 
