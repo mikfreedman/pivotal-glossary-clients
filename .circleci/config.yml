@@ -47,7 +47,7 @@ jobs:
       - run:
           name: Publish Addon
           command: |
-            npm run package_and_deploy
+            npm install && npm run package_and_deploy
 
 workflows:
   version: 2
