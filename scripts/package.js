@@ -22,17 +22,17 @@ fs.readFile(manifestFile, 'UTF-8', function (err, data) {
 
   jsonfile.writeFile('dist/' + manifestFile, manifest);
 
-  manifest.web_accessible_resources.forEach(function (file) {
+  (manifest.web_accessible_resources || []).forEach(function (file) {
     fileList.push(file);
   });
 
-  manifest.content_scripts.forEach(function (scripts) {
+  (manifest.content_scripts || []).forEach(function (scripts) {
     (scripts.css || scripts.js).forEach(function (file) {
       fileList.push(file);
     });
   });
 
-  manifest.background.scripts.forEach(function (scripts) {
+  (manifest.background.scripts || []).forEach(function (scripts) {
     fileList.push(scripts);
   });
 
