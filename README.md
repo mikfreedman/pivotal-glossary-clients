@@ -12,7 +12,7 @@ The shell for this application was generated using
 
 ## Installing the Extension
 
-[example.com](example.com)
+[https://chrome.google.com/webstore/detail/cf-glossary/ljjopgdkacddgfcpfofhngkbopmoamkk](https://chrome.google.com/webstore/detail/cf-glossary/ljjopgdkacddgfcpfofhngkbopmoamkk)
 
 ## Local Development
 
