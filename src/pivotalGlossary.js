@@ -1,7 +1,7 @@
 window.Glossaries = window.Glossaries || {};
 
-(function(CFGlossary) {
-  function cfGlossary(chrome) {
+(function(PivotalGlossary) {
+  function pivotalGlossary(chrome) {
     function slugify(text)
     {
       return text.toString().toLowerCase()
@@ -13,21 +13,21 @@ window.Glossaries = window.Glossaries || {};
     }
 
     function getword(info,tab) {
-      if (info.menuItemId == "cf-glossary") {
+      if (info.menuItemId == "pivotal-glossary") {
         chrome.tabs.create({
-          url: "https://cf-glossary.cfapps.io/#" + slugify(info.selectionText)
+          url: "https://pivotal-glossary.pivotalapps.io/#" + slugify(info.selectionText)
         });
       }
     }
 
     chrome.contextMenus.create({
-      id: 'cf-glossary',
-      title: "Lookup %s in CF Glossary",
+      id: 'pivotal-glossary',
+      title: "Lookup %s in Pivotal Glossary",
       contexts:["selection"]
     });
 
     chrome.contextMenus.onClicked.addListener(getword);
   }
 
-  Glossaries.CFGlossary = cfGlossary;
+  Glossaries.PivotalGlossary = pivotalGlossary;
 })(window.Glossaries);

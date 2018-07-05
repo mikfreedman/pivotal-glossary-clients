@@ -1,1 +1,1 @@
-var cfGlossary = new Glossaries.CFGlossary(chrome);
+var pivotalGlossary = new Glossaries.PivotalGlossary(chrome);

@@ -1,25 +1,25 @@
 {
-  "short_name": "cf-glossary",
-  "name": "CF Glossary",
+  "short_name": "pivotal-glossary",
+  "name": "Pivotal Glossary",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description": "This extension will lookup entries in cf-glossary.cfapps.io",
-  "homepage_url": "http://github.com/mikfreedman/cf-glossary-addon",
+  "description": "This extension will lookup entries in pivotal-glossary.pivotalapps.io",
+  "homepage_url": "http://github.com/mikfreedman/pivotal-glossary-addon",
   "icons": {
-    "16": "icons/cf-glossary-16.png",
-    "48": "icons/cf-glossary-48.png",
-    "128": "icons/cf-glossary-128.png"
+    "16": "icons/pivotal-glossary-16.png",
+    "48": "icons/pivotal-glossary-48.png",
+    "128": "icons/pivotal-glossary-128.png"
   },
   "default_locale": "en",
   "background": {
     "scripts": [
-      "src/cfGlossary.js",
+      "src/pivotalGlossary.js",
       "src/background.js"
     ],
     "persistent": false
   },
   "browser_action": {
-    "default_icon": "icons/cf-glossary-128.png",
+    "default_icon": "icons/pivotal-glossary-128.png",
     "default_title": "lookup entries"
   },
   "permissions": [

@@ -1,6 +1,6 @@
 {
-  "name": "cf-glossary",
-  "repository": "http://github.com/pivotal/cf-glossary",
+  "name": "pivotal-glossary",
+  "repository": "http://github.com/pivotal/pivotal-glossary",
   "dependencies": {},
   "devDependencies": {
     "get-stdin": "^5.0.1",

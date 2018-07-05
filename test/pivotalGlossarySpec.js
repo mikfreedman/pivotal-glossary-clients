@@ -1,5 +1,5 @@
-describe('Glossaries.CFGlossary', function () {
-  var cfGlossary;
+describe('Glossaries.PivotalGlossary', function () {
+  var pivotalGlossary;
   var chrome;
   var items = {};
 
@@ -24,9 +24,9 @@ describe('Glossaries.CFGlossary', function () {
     spyOn(chrome.contextMenus.onClicked, "addListener");
   });
 
-  describe("CF Glossary Addon", function() {
+  describe("Pivotal Glossary Addon", function() {
     it("adds the listener", function() {
-      cfGlossary = Glossaries.CFGlossary(chrome);
+      pivotalGlossary = Glossaries.PivotalGlossary(chrome);
       expect(chrome.contextMenus.create).toHaveBeenCalled();
     });
   });

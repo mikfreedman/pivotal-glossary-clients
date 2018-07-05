@@ -1,10 +1,10 @@
-# CF Glossary
+# Pivotal Glossary
 
-[![CircleCI](https://circleci.com/gh/mikfreedman/cf-glossary-addon.svg?style=svg)](https://circleci.com/gh/mikfreedman/cf-glossary-addon)
+[![CircleCI](https://circleci.com/gh/mikfreedman/pivotal-glossary-addon.svg?style=svg)](https://circleci.com/gh/mikfreedman/pivotal-glossary-addon)
 
-This chrome extension will show results from [cf-glossary.cfapps.io](http://cf-glossary.cfapps.io/)
+This chrome extension will show results from [pivotal-glossary.pivotalapps.io](http://pivotal-glossary.pivotalapps.io/)
 
-You use it by right clicking and selecting "Lookup in CF Glossary"
+You use it by right clicking and selecting "Lookup in Pivotal Glossary"
 
 The shell for this application was generated using
 
@@ -12,7 +12,7 @@ The shell for this application was generated using
 
 ## Installing the Extension
 
-[https://chrome.google.com/webstore/detail/cf-glossary/ljjopgdkacddgfcpfofhngkbopmoamkk](https://chrome.google.com/webstore/detail/cf-glossary/ljjopgdkacddgfcpfofhngkbopmoamkk)
+[https://chrome.google.com/webstore/detail/pivotal-glossary/ljjopgdkacddgfcpfofhngkbopmoamkk](https://chrome.google.com/webstore/detail/pivotal-glossary/ljjopgdkacddgfcpfofhngkbopmoamkk)
 
 ## Local Development
 
@@ -62,7 +62,7 @@ npm test
 
 ## Deployment
 
-This application is automatically deployed to the Chrome Web Store via CircleCI ([mikfreedman/cf-glossary-addon](https://circleci.com/gh/mikfreedman/cf-glossary-addon)).
+This application is automatically deployed to the Chrome Web Store via CircleCI ([mikfreedman/pivotal-glossary-addon](https://circleci.com/gh/mikfreedman/pivotal-glossary-addon)).
 
 The Circle CI build must be configured with the following environment variables:
 

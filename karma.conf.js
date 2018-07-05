@@ -15,7 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/cfGlossary.js',
+      'src/pivotalGlossary.js',
       'test/**/*Spec.js'
     ],
 
