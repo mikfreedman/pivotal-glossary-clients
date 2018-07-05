@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/mikfreedman/cf-glossary-addon.svg?style=svg)](https://circleci.com/gh/mikfreedman/cf-glossary-addon)
 
-This chrome extension will show results from (cf-glossary.cfapps.io)[http://cf-glossary.cfapps.io/]
+This chrome extension will show results from [cf-glossary.cfapps.io](http://cf-glossary.cfapps.io/)
 
 You use it by right clicking and selecting "Lookup in CF Glossary"
 
