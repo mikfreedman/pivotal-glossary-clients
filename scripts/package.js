@@ -5,6 +5,11 @@ var exec = require('child_process').exec;
 var jsonfile = require('jsonfile');
 
 var manifestFile = 'manifest.json';
+var distDir = './dist/';
+
+if (!fs.existsSync(distDir)){
+  fs.mkdirSync(distDir);
+}
 
 fs.readFile(manifestFile, 'UTF-8', function (err, data) {
   if (err) {
@@ -20,7 +25,7 @@ fs.readFile(manifestFile, 'UTF-8', function (err, data) {
     manifest.version = manifest.version + '.' + process.env.CIRCLE_BUILD_NUM;
   }
 
-  jsonfile.writeFile('dist/' + manifestFile, manifest);
+  jsonfile.writeFile(distDir + manifestFile, manifest);
 
   (manifest.web_accessible_resources || []).forEach(function (file) {
     fileList.push(file);
@@ -36,7 +41,7 @@ fs.readFile(manifestFile, 'UTF-8', function (err, data) {
     fileList.push(scripts);
   });
 
-  var zipFile = 'dist/' + manifest.short_name + '-' + manifest.version + '.zip';
+  var zipFile = distDir + manifest.short_name + '-' + manifest.version + '.zip';
   fileList.unshift(zipFile);
   var cmd = 'zip ' + fileList.join(' ') + ' && zip -j ' + zipFile + ' dist/manifest.json';
 
