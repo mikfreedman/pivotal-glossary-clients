@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/mikfreedman/pivotal-glossary-addon.svg?style=svg)](https://circleci.com/gh/mikfreedman/pivotal-glossary-addon)
 
-This chrome extension will show results from [pivotal-glossary.pivotalapps.io](http://pivotal-glossary.pivotalapps.io/)
+This chrome extension will show results from [cf-glossary.cfapps.io](http://cf-glossary.cfapps.io/)
 
 You use it by right clicking and selecting "Lookup in Pivotal Glossary"
 

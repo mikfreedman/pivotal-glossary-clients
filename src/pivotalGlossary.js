@@ -15,7 +15,7 @@ window.Glossaries = window.Glossaries || {};
     function getword(info,tab) {
       if (info.menuItemId == "pivotal-glossary") {
         chrome.tabs.create({
-          url: "https://pivotal-glossary.pivotalapps.io/#" + slugify(info.selectionText)
+          url: "https://cf-glossary.cfapps.io/#" + slugify(info.selectionText)
         });
       }
     }
