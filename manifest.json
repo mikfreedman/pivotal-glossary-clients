@@ -23,6 +23,6 @@
     "default_title": "lookup entries"
   },
   "permissions": [
-    "<all_urls>"
+    "contextMenus"
   ]
 }
