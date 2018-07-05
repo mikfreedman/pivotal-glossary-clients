@@ -1,1 +1,2 @@
-var pivotalGlossary = new Glossaries.PivotalGlossary(chrome);
+import {PivotalGlossary} from 'pivotal_glossary';
+var pivotalGlossary = new PivotalGlossary(chrome);

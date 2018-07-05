@@ -21,29 +21,20 @@ fs.readFile(manifestFile, 'UTF-8', function (err, data) {
     'icons/*'
   ];
 
+  var noPathFileList = [
+    'dist/background.js',
+    'dist/manifest.json'
+  ]
+
   if(process.env.CIRCLE_BUILD_NUM) {
     manifest.version = manifest.version + '.' + process.env.CIRCLE_BUILD_NUM;
   }
 
   jsonfile.writeFile(distDir + manifestFile, manifest);
 
-  (manifest.web_accessible_resources || []).forEach(function (file) {
-    fileList.push(file);
-  });
-
-  (manifest.content_scripts || []).forEach(function (scripts) {
-    (scripts.css || scripts.js).forEach(function (file) {
-      fileList.push(file);
-    });
-  });
-
-  (manifest.background.scripts || []).forEach(function (scripts) {
-    fileList.push(scripts);
-  });
-
   var zipFile = distDir + manifest.short_name + '-' + manifest.version + '.zip';
   fileList.unshift(zipFile);
-  var cmd = 'zip ' + fileList.join(' ') + ' && zip -j ' + zipFile + ' dist/manifest.json';
+  var cmd = 'zip ' + fileList.join(' ') + ' && zip -j ' + zipFile + ' ' + noPathFileList.join(' ');
 
   exec(cmd, function(error, stdout, stderr) {
     if (error) {

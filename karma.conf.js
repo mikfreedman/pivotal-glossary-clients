@@ -15,8 +15,18 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/pivotalGlossary.js',
-      'test/**/*Spec.js'
+      './node_modules/underscore/underscore-min.js',
+      {pattern: 'src/*.js', watched:true, served:false, included:false, nocache:false},
+      {pattern: 'test/*spec.js',watched:true,served:true,included:true}
+      /*parameters*/
+          //watched: if autoWatch is true all files that have set watched to true will be watched for changes
+          //served: should the files be served by Karma's webserver?
+          //included: should the files be included in the browser using <script> tag?
+          //nocache: should the files be served from disk on each request by Karma's webserver?
+      /*assets*/
+          //{pattern: '*.html', watched:true, served:true, included:false}
+          //{pattern: 'images/*', watched:false, served:true, included:false}
+
     ],
 
 
@@ -28,8 +38,13 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      './test/*spec.js': ['webpack']
     },
 
+    webpackMiddleware: {
+      noInfo: true,
+      stats: 'errors-only'
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

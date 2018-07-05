@@ -1,4 +1,6 @@
-describe('Glossaries.PivotalGlossary', function () {
+import {PivotalGlossary} from '../src/pivotal_glossary'
+
+describe('PivotalGlossary', function () {
   var pivotalGlossary;
   var chrome;
   var items = {};
@@ -26,7 +28,7 @@ describe('Glossaries.PivotalGlossary', function () {
 
   describe("Pivotal Glossary Addon", function() {
     it("adds the listener", function() {
-      pivotalGlossary = Glossaries.PivotalGlossary(chrome);
+      pivotalGlossary = new PivotalGlossary(chrome);
       expect(chrome.contextMenus.create).toHaveBeenCalled();
     });
   });
