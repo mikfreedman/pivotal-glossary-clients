@@ -22,7 +22,7 @@ window.Glossaries = window.Glossaries || {};
 
     chrome.contextMenus.create({
       id: 'pivotal-glossary',
-      title: "Lookup %s in Pivotal Glossary",
+      title: "Lookup \"%s\" in Pivotal Glossary",
       contexts:["selection"]
     });
 
