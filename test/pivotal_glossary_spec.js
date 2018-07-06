@@ -32,4 +32,21 @@ describe('PivotalGlossary', function () {
       expect(chrome.contextMenus.create).toHaveBeenCalled();
     });
   });
+
+  describe("Slugification", function() {
+    it("removes non word characters", function() {
+      pivotalGlossary = new PivotalGlossary(chrome);
+      expect(pivotalGlossary.slugify("down$trodden")).toEqual("downtrodden");
+    });
+
+    it("replaces whitespace with a single dash", function() {
+      pivotalGlossary = new PivotalGlossary(chrome);
+      expect(pivotalGlossary.slugify("down   trodden")).toEqual("down-trodden");
+    });
+
+    it("replaces whitespace and removes non word characters", function() {
+      pivotalGlossary = new PivotalGlossary(chrome);
+      expect(pivotalGlossary.slugify("do^wn %trodden")).toEqual("down-trodden");
+    });
+  });
 });
