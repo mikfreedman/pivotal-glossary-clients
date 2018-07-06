@@ -1,7 +1,7 @@
-import {PivotalGlossary} from '../src/pivotal_glossary'
+import {ContextMenuSearch} from '../src/context_menu_search';
 
-describe('PivotalGlossary', function () {
-  var pivotalGlossary;
+describe('ContextMenuSearch', function () {
+  var contextMenuSearch;
   var chrome;
   var items = {};
 
@@ -19,7 +19,7 @@ describe('PivotalGlossary', function () {
           }
         }
       }
-    }
+    };
 
     spyOn(chrome.tabs, "create");
     spyOn(chrome.contextMenus, "create");
@@ -28,25 +28,25 @@ describe('PivotalGlossary', function () {
 
   describe("Pivotal Glossary Addon", function() {
     it("adds the listener", function() {
-      pivotalGlossary = new PivotalGlossary(chrome);
+      contextMenuSearch = new ContextMenuSearch(chrome);
       expect(chrome.contextMenus.create).toHaveBeenCalled();
     });
   });
 
   describe("Slugification", function() {
     it("removes non word characters", function() {
-      pivotalGlossary = new PivotalGlossary(chrome);
-      expect(pivotalGlossary.slugify("down$trodden")).toEqual("downtrodden");
+      contextMenuSearch = new ContextMenuSearch(chrome);
+      expect(contextMenuSearch.slugify("down$trodden")).toEqual("downtrodden");
     });
 
     it("replaces whitespace with a single dash", function() {
-      pivotalGlossary = new PivotalGlossary(chrome);
-      expect(pivotalGlossary.slugify("down   trodden")).toEqual("down-trodden");
+      contextMenuSearch = new ContextMenuSearch(chrome);
+      expect(contextMenuSearch.slugify("down   trodden")).toEqual("down-trodden");
     });
 
     it("replaces whitespace and removes non word characters", function() {
-      pivotalGlossary = new PivotalGlossary(chrome);
-      expect(pivotalGlossary.slugify("do^wn %trodden")).toEqual("down-trodden");
+      contextMenuSearch = new ContextMenuSearch(chrome);
+      expect(contextMenuSearch.slugify("do^wn %trodden")).toEqual("down-trodden");
     });
   });
 });

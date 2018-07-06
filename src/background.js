@@ -1,2 +1,2 @@
-import {PivotalGlossary} from 'pivotal_glossary';
-var pivotalGlossary = new PivotalGlossary(chrome);
+import {ContextMenuSearch} from 'context_menu_search';
+var contextMenuSearch = new ContextMenuSearch(chrome);

@@ -1,4 +1,4 @@
-export class PivotalGlossary {
+export class ContextMenuSearch {
   constructor(browser) {
     this.browser = browser;
 
