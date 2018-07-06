@@ -15,7 +15,7 @@ export class PivotalGlossary {
   {
     return text.toString().toLowerCase()
       .replace(/\s+/g, '-')
-      .replace(/[^\w\-]+/g, '')
+      .replace(/[^\w\-]+/g, '');
   }
 
   getword(info,tab) {
