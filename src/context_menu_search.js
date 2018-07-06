@@ -1,6 +1,9 @@
+import {DefinitionRepository} from './definition_repository';
+
 export class ContextMenuSearch {
   constructor(browser) {
     this.browser = browser;
+    this.definitionRepository = new DefinitionRepository();
 
     this.browser.contextMenus.create({
       id: 'pivotal-glossary',
@@ -11,17 +14,11 @@ export class ContextMenuSearch {
     this.browser.contextMenus.onClicked.addListener(this.getword.bind(this));
   }
 
-  slugify(text)
-  {
-    return text.toString().toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[^\w\-]+/g, '');
-  }
-
   getword(info,tab) {
     if (info.menuItemId == "pivotal-glossary") {
+      var definition = definitionRepository.find(info.selectionText);
       this.browser.tabs.create({
-        url: "https://cf-glossary.cfapps.io/#" + this.slugify(info.selectionText)
+        url: definition.url()
       });
     }
   }

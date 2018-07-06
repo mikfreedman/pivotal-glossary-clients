@@ -32,21 +32,4 @@ describe('ContextMenuSearch', function () {
       expect(chrome.contextMenus.create).toHaveBeenCalled();
     });
   });
-
-  describe("Slugification", function() {
-    it("removes non word characters", function() {
-      contextMenuSearch = new ContextMenuSearch(chrome);
-      expect(contextMenuSearch.slugify("down$trodden")).toEqual("downtrodden");
-    });
-
-    it("replaces whitespace with a single dash", function() {
-      contextMenuSearch = new ContextMenuSearch(chrome);
-      expect(contextMenuSearch.slugify("down   trodden")).toEqual("down-trodden");
-    });
-
-    it("replaces whitespace and removes non word characters", function() {
-      contextMenuSearch = new ContextMenuSearch(chrome);
-      expect(contextMenuSearch.slugify("do^wn %trodden")).toEqual("down-trodden");
-    });
-  });
 });
