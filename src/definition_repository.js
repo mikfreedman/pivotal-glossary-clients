@@ -6,6 +6,6 @@ export class DefinitionRepository {
   }
 
   find(searchText) {
-    return new Definition(this.baseURL, searchText);
+    return new Definition(this.baseURL, { headword: searchText });
   }
 }

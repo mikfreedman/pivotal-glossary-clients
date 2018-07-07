@@ -1,6 +1,6 @@
 export class Definition {
-  constructor(baseURL, headword) {
-    this.headword = headword;
+  constructor(baseURL, attributes) {
+    Object.assign(this, attributes);
     this._url = baseURL + "/#" + this.slug;
   }
 
