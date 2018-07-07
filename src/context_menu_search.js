@@ -1,9 +1,9 @@
 import {DefinitionRepository} from './definition_repository';
 
 export class ContextMenuSearch {
-  constructor(browser) {
+  constructor(browser, definitionRepository) {
     this.browser = browser;
-    this.definitionRepository = new DefinitionRepository();
+    this.definitionRepository = definitionRepository;
 
     this.browser.contextMenus.create({
       id: 'pivotal-glossary',
