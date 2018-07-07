@@ -1,9 +1,8 @@
-import {DefinitionRepository} from './definition_repository';
-
 export class ContextMenuSearch {
-  constructor(browser, definitionRepository) {
+  constructor(browser, definitionRepository, foundWordCallback) {
     this.browser = browser;
     this.definitionRepository = definitionRepository;
+    this.foundWordCallback = foundWordCallback;
 
     this.browser.contextMenus.create({
       id: 'pivotal-glossary',
@@ -16,10 +15,7 @@ export class ContextMenuSearch {
 
   getword(info,tab) {
     if (info.menuItemId == "pivotal-glossary") {
-      var definition = definitionRepository.find(info.selectionText);
-      this.browser.tabs.create({
-        url: definition.url
-      });
+      this.foundWordCallback(this.definitionRepository.find(info.selectionText));
     }
   }
 }
