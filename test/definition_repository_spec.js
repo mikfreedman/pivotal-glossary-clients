@@ -11,7 +11,7 @@ describe('DefinitionRepository', function () {
       definitionRepository = new DefinitionRepository();
       var definition = definitionRepository.find("Define This");
       expect(definition).toBeDefined();
-      expect(definition.slug()).toEqual("define-this");
+      expect(definition.slug).toEqual("define-this");
     })
   });
 });

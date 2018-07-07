@@ -9,4 +9,3 @@ export class DefinitionRepository {
     return new Definition(this.baseURL, searchText);
   }
 }
-

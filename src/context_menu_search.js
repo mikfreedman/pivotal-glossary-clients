@@ -18,7 +18,7 @@ export class ContextMenuSearch {
     if (info.menuItemId == "pivotal-glossary") {
       var definition = definitionRepository.find(info.selectionText);
       this.browser.tabs.create({
-        url: definition.url()
+        url: definition.url
       });
     }
   }

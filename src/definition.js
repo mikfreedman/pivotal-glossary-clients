@@ -1,19 +1,19 @@
 export class Definition {
   constructor(baseURL, headword) {
     this.headword = headword;
-    this.baseURL = baseURL;
+    this._url = baseURL + "/#" + this.slug;
   }
 
-  slug()
+  get slug()
   {
     return this.headword.toString().toLowerCase()
       .replace(/\s+/g, '-')
       .replace(/[^\w\-]+/g, '');
   }
 
-  url()
+  get url()
   {
-    return this.baseURL + "/#" + this.slug();
+    return this._url;
   }
 }
 
