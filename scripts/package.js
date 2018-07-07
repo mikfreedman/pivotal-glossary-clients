@@ -23,6 +23,7 @@ fs.readFile(manifestFile, 'UTF-8', function (err, data) {
 
   var noPathFileList = [
     'dist/background.js',
+    'dist/content_script.js',
     'dist/manifest.json'
   ]
 

@@ -1,12 +1,14 @@
-import {DefinitionRepository} from './definition_repository';
 import {ContextMenuSearch} from 'context_menu_search';
 
-var definitionRepository = new DefinitionRepository();
+var displayDefinition = function displayDefinition(searchTerm) {
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+    var response = {
+      action: "display-definition",
+      search_term: searchTerm
+    };
 
-var displayDefinition = function displayDefinition(definition) {
-  chrome.tabs.create({
-    url: definition.url
+    chrome.tabs.sendMessage(tabs[0].id, response, function(response) {});
   });
-}
+};
 
-var contextMenuSearch = new ContextMenuSearch(chrome, definitionRepository, displayDefinition);
+var contextMenuSearch = new ContextMenuSearch(chrome, displayDefinition);

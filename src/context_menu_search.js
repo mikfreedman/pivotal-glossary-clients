@@ -1,8 +1,7 @@
 export class ContextMenuSearch {
-  constructor(browser, definitionRepository, foundWordCallback) {
+  constructor(browser, displayDefinition) {
     this.browser = browser;
-    this.definitionRepository = definitionRepository;
-    this.foundWordCallback = foundWordCallback;
+    this.displayDefinition = displayDefinition;
 
     this.browser.contextMenus.create({
       id: 'pivotal-glossary',
@@ -15,7 +14,7 @@ export class ContextMenuSearch {
 
   getword(info,tab) {
     if (info.menuItemId == "pivotal-glossary") {
-      this.foundWordCallback(this.definitionRepository.find(info.selectionText));
+      this.displayDefinition(info.selectionText);
     }
   }
 }
