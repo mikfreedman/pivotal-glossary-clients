@@ -5,7 +5,7 @@ export class DefinitionRepository {
     this.baseURL = baseURL;
 
     this.getData((response) => {
-      this.definitions = _.map(Object.entries(response), ([key,value]) => {
+      this.definitions = Object.entries(response).map(([key,value]) => {
         new Definition(baseURL, value);
       });
     });
