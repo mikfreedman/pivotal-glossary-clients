@@ -6,14 +6,14 @@ export class DefinitionRepository {
 
     this.getData((response) => {
       this.definitions = Object.entries(response).map(([key,value]) => {
-        new Definition(baseURL, value);
+        return new Definition(baseURL, value);
       });
     });
   }
 
   find(searchText) {
     return this.definitions.find((def) => {
-      def.matches(searchText);
+      return def.matches(searchText);
     });
   }
 
