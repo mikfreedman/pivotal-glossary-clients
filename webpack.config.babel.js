@@ -30,8 +30,5 @@ export default {
         ],
     },
     plugins: [
-      new webpack.ProvidePlugin({
-        _: 'underscore'
-      })
     ]
 };

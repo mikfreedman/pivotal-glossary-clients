@@ -15,7 +15,6 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './node_modules/underscore/underscore-min.js',
       {pattern: 'src/*.js', watched:true, served:false, included:false, nocache:false},
       {pattern: 'test/*spec.js',watched:true,served:true,included:true}
       /*parameters*/
