@@ -13,7 +13,7 @@ describe('Definition', function () {
       expect(definition.matches("down-trodden")).toBe(false);
 
       definition = new Definition("http://example.com", { headword: "felix cat" });
-      expect(definition.matches("felixcat")).toBe(false);
+      expect(definition.matches("felixcat")).toBe(true);
     });
   });
 
@@ -21,7 +21,7 @@ describe('Definition', function () {
     describe("URL", function() {
       it("returns the URL", function() {
         definition = new Definition("http://example.com", { headword: "do^wn %trodden" });
-        expect(definition.url).toEqual("http://example.com/#down-trodden");
+        expect(definition.url).toEqual("http://example.com/#downtrodden");
       });
     });
   });
