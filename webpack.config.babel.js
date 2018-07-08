@@ -2,9 +2,14 @@ import path from 'path';
 import webpack from 'webpack';
 import fs from 'fs';
 import CopyWebpackPlugin from 'copy-webpack-plugin'
+import GenerateJsonPlugin from 'generate-json-webpack-plugin'
 
 var pkg = require('./package.json');
-pkg.currentDate = (new Date()).toISOString();
+var version = pkg.version
+var manifest = require('./manifest.template.json');
+
+if(process.env.CIRCLE_BUILD_NUM)
+   version += '.' + process.env.CIRCLE_BUILD_NUM;
 
 export default {
   entry: {
@@ -34,6 +39,11 @@ export default {
       new CopyWebpackPlugin([
         { from: 'icons', to: 'icons' },
         { from: '_locales/**/*', flatten: false }
-      ])
+      ]),
+      new GenerateJsonPlugin(
+        'manifest.json',
+        Object.assign(manifest, { version: version }),
+        2
+      )
     ]
 };
