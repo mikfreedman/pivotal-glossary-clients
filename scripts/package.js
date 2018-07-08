@@ -6,6 +6,7 @@ var jsonfile = require('jsonfile');
 
 var manifestFile = 'manifest.json';
 var distDir = './dist/';
+var buildDir = './build/';
 
 if (!fs.existsSync(distDir)){
   fs.mkdirSync(distDir);
@@ -16,28 +17,18 @@ fs.readFile(manifestFile, 'UTF-8', function (err, data) {
     console.log('Error!', err);
   }
   var manifest = JSON.parse(data);
-  var fileList = [
-    '_locales/**/*',
-    'icons/*'
-  ];
-
-  var noPathFileList = [
-    'dist/background.js',
-    'dist/content_script.js',
-    'dist/manifest.json'
-  ]
 
   if(process.env.CIRCLE_BUILD_NUM) {
     manifest.version = manifest.version + '.' + process.env.CIRCLE_BUILD_NUM;
   }
 
-  jsonfile.writeFile(distDir + manifestFile, manifest);
+  jsonfile.writeFile(buildDir + manifestFile, manifest);
 
-  var zipFile = distDir + manifest.short_name + '-' + manifest.version + '.zip';
-  fileList.unshift(zipFile);
-  var cmd = 'zip ' + fileList.join(' ') + ' && zip -j ' + zipFile + ' ' + noPathFileList.join(' ');
+  var zipFile = '../' + distDir + manifest.short_name + '-' + manifest.version + '.zip';
 
-  exec(cmd, function(error, stdout, stderr) {
+  var cmd = `zip -r ${zipFile} ./*`
+
+  exec(cmd, { cwd: buildDir}, function(error, stdout, stderr) {
     if (error) {
       console.log('Error!', error, stderr);
     } else {

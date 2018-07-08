@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import fs from 'fs';
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 
 var pkg = require('./package.json');
 pkg.currentDate = (new Date()).toISOString();
@@ -20,7 +21,7 @@ export default {
     output: {
       filename: '[name].js',
         libraryTarget: 'this',
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'build'),
     },
     resolve: {
       extensions: ['.js'],
@@ -30,5 +31,9 @@ export default {
         ],
     },
     plugins: [
+      new CopyWebpackPlugin([
+        { from: 'icons', to: 'icons' },
+        { from: '_locales/**/*', flatten: false }
+      ])
     ]
 };
