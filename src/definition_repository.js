@@ -29,6 +29,6 @@ export class DefinitionRepository {
   }
 
   fallbackDefinition(searchTerm) {
-    return new Definition(this.baseURL, {headword: searchTerm});
+    return new Definition(this.baseURL, {headword: searchTerm, definition: "No Definition Found"});
   }
 }
