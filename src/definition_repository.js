@@ -1,5 +1,4 @@
 import {Definition} from './definition';
-import {Slugger} from './slugger';
 
 export class DefinitionRepository {
   constructor(baseURL = "https://cf-glossary.cfapps.io") {
@@ -13,7 +12,9 @@ export class DefinitionRepository {
   }
 
   find(searchText) {
-    return this.definitions.find(function (o) { return o.slug === Slugger.slug(searchText); });
+    return this.definitions.find((def) => {
+      def.matches(searchText);
+    });
   }
 
   getData(success) {

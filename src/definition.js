@@ -11,5 +11,9 @@ export class Definition {
   {
     return this._url;
   }
+
+  matches(term) {
+    return this.slug === Slugger.slug(term);
+  }
 }
 
