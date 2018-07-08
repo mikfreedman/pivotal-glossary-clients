@@ -38,10 +38,10 @@ describe('DefinitionRepository', function () {
         promiseHelper.resolve(response);
       });
 
-      it('once loaded it returns the definition', function() {
+      fit('once loaded it returns the definition', function() {
         definitionRepository.loaded.then(() => {
           var definition = definitionRepository.find("gnu")
-          expect(definition.headword).toEqual("GNU");
+          expect(definition.headword).toEqual("GNUaaaaa");
         });
       });
     });

@@ -12,8 +12,14 @@ export class DefinitionRepository {
     });
   }
 
-  find(searchText) {
-    return this.definitions.find(function (o) { return o.slug === Slugger.slug(searchText); });
+  find({search_term, success, failure}) {
+    var definition = this.definitions.find(function (o) { return o.slug === Slugger.slug(search_term); });
+
+    if(definition == undefined) {
+      failure(new Definition(this.baseURL, {headword: search_term}));
+    } else {
+      success(definition);
+    }
   }
 
   getData(success) {
@@ -28,6 +34,6 @@ export class DefinitionRepository {
   }
 
   fallbackDefinition(searchTerm) {
-    return new Definition(this.baseURL, {headword: searchTerm});
+    return ;
   }
 }
