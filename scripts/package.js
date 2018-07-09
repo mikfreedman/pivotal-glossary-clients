@@ -10,8 +10,8 @@ if (!fs.existsSync(distDir)){
   fs.mkdirSync(distDir);
 }
 
-var zipFile = '../' + distDir + pkg.name + '-' + pkg.version + '.zip';
-var cmd = `zip -r ${zipFile} ./*`
+var zipFile = distDir + pkg.name + '-' + pkg.version + '.zip';
+var cmd = `zip -r ../${zipFile} ./*`
 
 exec(cmd, { cwd: buildDir }, function(error, stdout, stderr) {
   if (error) {
