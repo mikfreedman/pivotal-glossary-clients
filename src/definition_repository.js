@@ -28,7 +28,7 @@ export class DefinitionRepository {
       });
   }
 
-  fallbackDefinition(searchTerm) {
+  newNotFoundDefinition(searchTerm) {
     return new Definition(this.baseURL, {headword: searchTerm, definition: "No Definition Found"});
   }
 }

@@ -29,7 +29,7 @@ export class DefinitionView {
     if(this.definition.see_also) {
       output.push('<hr><b>see also</b>:');
       output.push(this.definition.see_also.map((seeAlso) => {
-        return (`<a target='_blank' href='${this.definitionRepository.fallbackDefinition(seeAlso).url}'>${seeAlso}</a>`);
+        return (`<a target='_blank' href='${this.definitionRepository.newNotFoundDefinition(seeAlso).url}'>${seeAlso}</a>`);
       }).join(', '));
     }
 

@@ -30,7 +30,7 @@ chrome.runtime.onMessage.addListener(
     if (request.action == "display-definition") {
       var definition = definitionRepository.find(request.search_term);
       if(definition === undefined) {
-        toolTip(definitionRepository.fallbackDefinition(request.search_term))
+        toolTip(definitionRepository.newNotFoundDefinition(request.search_term))
           .show();
       } else {
         toolTip(definition)
