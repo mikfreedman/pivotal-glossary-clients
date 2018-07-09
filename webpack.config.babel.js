@@ -36,7 +36,8 @@ export default {
     plugins: [
       new CopyWebpackPlugin([
         { from: 'icons', to: 'icons' },
-        { from: '_locales/**/*', flatten: false }
+        { from: '_locales/**/*', flatten: false },
+        { from: './src/content_script.css', flatten: true }
       ]),
       new GenerateJsonPlugin(
         'manifest.json',

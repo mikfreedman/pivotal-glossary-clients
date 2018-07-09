@@ -20,6 +20,7 @@ function toolTip(definition) {
     trigger: 'manual',
     arrow: true,
     maxWidth: '400px',
+    theme: 'glossary',
     interactive: true,
     html: new DefinitionView(definition, definitionRepository, document).html
   });
