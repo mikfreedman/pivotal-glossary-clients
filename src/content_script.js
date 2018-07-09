@@ -20,7 +20,8 @@ function toolTip(definition) {
     trigger: 'manual',
     arrow: true,
     maxWidth: '400px',
-    html: new DefinitionView(definition, document).html
+    interactive: true,
+    html: new DefinitionView(definition, definitionRepository, document).html
   });
 }
 
