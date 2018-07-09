@@ -1,20 +1,18 @@
 import path from 'path';
 import webpack from 'webpack';
 import fs from 'fs';
-import CopyWebpackPlugin from 'copy-webpack-plugin'
-import GenerateJsonPlugin from 'generate-json-webpack-plugin'
+import CopyWebpackPlugin from 'copy-webpack-plugin';
+import GenerateJsonPlugin from 'generate-json-webpack-plugin';
+import ZipPlugin from 'zip-webpack-plugin';
+import {Release} from './scripts/release';
 
-var pkg = require('./package.json');
-var version = pkg.version
+var release = new Release(require('./package.json'));
 var manifest = require('./manifest.template.json');
-
-if(process.env.CIRCLE_BUILD_NUM)
-   version += '.' + process.env.CIRCLE_BUILD_NUM;
 
 export default {
   entry: {
     background: path.join(__dirname, 'src/background.js'),
-      content_script: path.join(__dirname, 'src/content_script.js')
+    content_script: path.join(__dirname, 'src/content_script.js')
   },
     module: {
       rules: [{
@@ -42,8 +40,12 @@ export default {
       ]),
       new GenerateJsonPlugin(
         'manifest.json',
-        Object.assign(manifest, { version: version }),
+        Object.assign(manifest, { version: release.version }),
         2
-      )
+      ),
+      new ZipPlugin({
+        path: '../dist',
+        filename: release.filename
+      })
     ]
 };

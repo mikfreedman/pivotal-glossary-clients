@@ -1,9 +1,12 @@
 #! /usr/bin/env node
 
+import {Release} from './release';
+
 const GoogleTokenProvider = require('refresh-token').GoogleTokenProvider;
-const getStdin = require('get-stdin');
 const fs = require('fs');
 var Curl = require( 'node-libcurl' ).Curl;
+
+var release = new Release(require('../package.json'));
 
 var tokenProvider = new GoogleTokenProvider({
   refresh_token: process.env.REFRESH_TOKEN,
@@ -12,10 +15,8 @@ var tokenProvider = new GoogleTokenProvider({
 });
 
 tokenProvider.getToken(function (err, token) {
-  getStdin().then(function(fileName) {
-    uploadFile(token, fileName.trim(), function() {
-      publishFile(token);
-    });
+  uploadFile(token, "dist/" + release.filename, function() {
+    publishFile(token);
   });
 });
 
