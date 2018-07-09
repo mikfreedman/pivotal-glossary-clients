@@ -28,13 +28,7 @@ function toolTip(definition) {
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if (request.action == "display-definition") {
-      var definition = definitionRepository.find(request.search_term);
-      if(definition === undefined) {
-        toolTip(definitionRepository.newNotFoundDefinition(request.search_term))
-          .show();
-      } else {
-        toolTip(definition)
-          .show();
-      }
+      var definition = definitionRepository.find(request.search_term) || definitionRepository.newNotFoundDefinition(request.search_term);
+      toolTip(definition).show();
     }
   });
