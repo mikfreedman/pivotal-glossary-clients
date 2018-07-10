@@ -1,18 +1,18 @@
-import {Definition} from './definition';
+import {Entry} from './entry';
 
-export class DefinitionRepository {
+export class EntryRepository {
   constructor(baseURL = "https://cf-glossary.cfapps.io") {
     this.baseURL = baseURL;
 
     this.getData((response) => {
-      this.definitions = Object.entries(response).map(([key,value]) => {
-        return new Definition(baseURL, value);
+      this.entrys = Object.entries(response).map(([key,value]) => {
+        return new Entry(baseURL, value);
       });
     });
   }
 
   find(searchText) {
-    return this.definitions.find((def) => {
+    return this.entrys.find((def) => {
       return def.matches(searchText);
     });
   }
@@ -28,7 +28,7 @@ export class DefinitionRepository {
       });
   }
 
-  newNotFoundDefinition(searchTerm) {
-    return new Definition(this.baseURL, {headword: searchTerm, definition: "No Definition Found"});
+  newNotFoundEntry(searchTerm) {
+    return new Entry(this.baseURL, {headword: searchTerm, entry: "No Entry Found"});
   }
 }

@@ -1,9 +1,9 @@
 import {ContextMenuSearch} from 'context_menu_search';
 
-var displayDefinition = function displayDefinition(searchTerm) {
+var displayEntry = function displayEntry(searchTerm) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
     var response = {
-      action: "display-definition",
+      action: "display-entry",
       search_term: searchTerm
     };
 
@@ -11,4 +11,4 @@ var displayDefinition = function displayDefinition(searchTerm) {
   });
 };
 
-var contextMenuSearch = new ContextMenuSearch(chrome, displayDefinition);
+var contextMenuSearch = new ContextMenuSearch(chrome, displayEntry);

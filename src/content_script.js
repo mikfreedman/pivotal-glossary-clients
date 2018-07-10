@@ -1,9 +1,9 @@
-import {DefinitionRepository} from './definition_repository';
-import {DefinitionView} from './definition_view';
+import {EntryRepository} from './entry_repository';
+import {EntryView} from './entry_view';
 
 import Tippy from 'tippy.js';
 
-var definitionRepository = new DefinitionRepository();
+var entryRepository = new EntryRepository();
 
 const selectedTextReference = {
   getBoundingClientRect() {
@@ -15,20 +15,20 @@ const selectedTextReference = {
   clientWidth: 100
 };
 
-function toolTip(definition) {
+function toolTip(entry) {
   return Tippy.one(selectedTextReference, {
     trigger: 'manual',
     arrow: true,
     maxWidth: '400px',
     interactive: true,
-    html: new DefinitionView(definition, definitionRepository, document).html
+    html: new EntryView(entry, entryRepository, document).html
   });
 }
 
 chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
-    if (request.action == "display-definition") {
-      var definition = definitionRepository.find(request.search_term) || definitionRepository.newNotFoundDefinition(request.search_term);
-      toolTip(definition).show();
+    if (request.action == "display-entry") {
+      var entry = entryRepository.find(request.search_term) || entryRepository.newNotFoundEntry(request.search_term);
+      toolTip(entry).show();
     }
   });

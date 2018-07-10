@@ -1,7 +1,7 @@
-import {DefinitionRepository} from '../src/definition_repository';
+import {EntryRepository} from '../src/entry_repository';
 
-describe('DefinitionRepository', function () {
-  var definitionRepository;
+describe('EntryRepository', function () {
+  var entryRepository;
   var promiseHelper;
   var words = {
     "GNU":
@@ -24,7 +24,7 @@ describe('DefinitionRepository', function () {
 
     spyOn(window, 'fetch').and.returnValue(fetchPromise);
 
-    definitionRepository = new DefinitionRepository();
+    entryRepository = new EntryRepository();
   });
 
   describe("loading the remote list", () => {
@@ -38,10 +38,10 @@ describe('DefinitionRepository', function () {
         promiseHelper.resolve(response);
       });
 
-      it('once loaded it returns the definition', function() {
-        definitionRepository.loaded.then(() => {
-          var definition = definitionRepository.find("gnu")
-          expect(definition.headword).toEqual("GNU");
+      it('once loaded it returns the entry', function() {
+        entryRepository.loaded.then(() => {
+          var entry = entryRepository.find("gnu")
+          expect(entry.headword).toEqual("GNU");
         });
       });
     });

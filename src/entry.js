@@ -1,6 +1,6 @@
 import {Slugger} from './slugger';
 
-export class Definition {
+export class Entry {
   constructor(baseURL, attributes) {
     Object.assign(this, attributes);
     this.slug = Slugger.slug(this.headword);
