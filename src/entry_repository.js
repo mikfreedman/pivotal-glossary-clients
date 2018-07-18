@@ -29,6 +29,6 @@ export class EntryRepository {
   }
 
   newNotFoundEntry(searchTerm) {
-    return new Entry(this.baseURL, {headword: searchTerm, entry: "No Entry Found"});
+    return new Entry(this.baseURL, {headword: searchTerm, definition: "No Entry Found"});
   }
 }
