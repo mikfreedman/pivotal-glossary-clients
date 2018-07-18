@@ -14,6 +14,10 @@ The shell for this application was generated using
 
 [https://chrome.google.com/webstore/detail/pivotal-glossary/ljjopgdkacddgfcpfofhngkbopmoamkk](https://chrome.google.com/webstore/detail/pivotal-glossary/ljjopgdkacddgfcpfofhngkbopmoamkk)
 
+Lookup is performed locally in your browser; no data is sent to any remote server.
+
+You can contribute new definitions to the github repo at https://github.com/pivotal-cf/glossary
+
 ## Local Development
 
 Install npm and the packages pertinent for this app:
@@ -37,7 +41,6 @@ if [[ ! -e /usr/bin/node ]] ; then
   sudo ln -s /usr/bin/nodejs /usr/bin/node
 fi
 ```
-
 
 __Then:__
 
