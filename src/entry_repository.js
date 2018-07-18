@@ -5,14 +5,14 @@ export class EntryRepository {
     this.baseURL = baseURL;
 
     this.getData((response) => {
-      this.entrys = Object.entries(response).map(([key,value]) => {
+      this.entries = Object.entries(response).map(([key,value]) => {
         return new Entry(baseURL, value);
       });
     });
   }
 
   find(searchText) {
-    return this.entrys.find((def) => {
+    return this.entries.find((def) => {
       return def.matches(searchText);
     });
   }
