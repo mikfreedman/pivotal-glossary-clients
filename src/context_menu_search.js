@@ -14,7 +14,17 @@ export class ContextMenuSearch {
 
   getword(info,tab) {
     if (info.menuItemId == "pivotal-glossary") {
-      this.displayEntry(info.selectionText);
+      if (this.injected) {
+        this.displayEntry(info.selectionText);
+      }
+      else {
+        chrome.tabs.executeScript({
+          file: 'content_script.js'
+        }, () => {
+          this.displayEntry(info.selectionText);
+          this.injected = true;
+        });
+      }
     }
   }
 }
