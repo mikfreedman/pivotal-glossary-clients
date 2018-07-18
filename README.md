@@ -30,7 +30,7 @@ Each time you add a new feature, you will need to reload the extension from the 
 
 ## Local Development
 
-Install npm and the packages pertinent for this app:
+### Installation
 
 __OSX__
 
@@ -54,12 +54,11 @@ fi
 
 __Then:__
 
-1. `npm install`
-1. `npm test`
+```bash
+npm install
+```
 
-## Tests
-
-First, install npm and the pertinent packages, as described in the [Local Development](#local-development). Then, run the tests with:
+### Tests
 
 ```bash
 npm test
