@@ -12,7 +12,7 @@ export class ContextMenuSearch {
     this.browser.contextMenus.onClicked.addListener(this.getword.bind(this));
   }
 
-  getword(info,tab) {
+  getword(info) {
     if (info.menuItemId == "pivotal-glossary") {
       if (this.injected) {
         this.displayEntry(info.selectionText);
