@@ -6,19 +6,27 @@
 
 [![CircleCI](https://circleci.com/gh/mikfreedman/pivotal-glossary-addon.svg?style=svg)](https://circleci.com/gh/mikfreedman/pivotal-glossary-addon)
 
-
-You use it via the Chrome context menu by selecting "Lookup in Pivotal Glossary"
-
-The shell for this application was generated using
-[Extensionizr](http://extensionizr.com)
+* You use it via the Chrome context menu by selecting "Lookup in Pivotal Glossary"
+* The shell for this application was generated using [Extensionizr](http://extensionizr.com)
+* Lookup is performed locally in your browser; no data is sent to any remote server.
+* You can contribute new definitions to the github repo at [pivotal-cf/glossary](https://github.com/pivotal-cf/glossary)
 
 ## Installing the Extension
 
+### As an extension from the Chrome Webstore
 [https://chrome.google.com/webstore/detail/pivotal-glossary/ljjopgdkacddgfcpfofhngkbopmoamkk](https://chrome.google.com/webstore/detail/pivotal-glossary/ljjopgdkacddgfcpfofhngkbopmoamkk)
 
-Lookup is performed locally in your browser; no data is sent to any remote server.
+### As an unpacked local extension
 
-You can contribute new definitions to the github repo at [pivotal-cf/glossary](https://github.com/pivotal-cf/glossary)
+1. Follow the [Local Development](#local-development) instructions below
+1. Go to [chrome://extensions/](chrome://extensions/)
+1. Ensure that the Developer mode checkbox in the top right-hand corner is checked.
+1. `npm build`
+1. Click Load unpacked extension… to pop up a file-selection dialog.
+1. Navigate to the directory in which your extension files live, find the `build` directory and select it.
+
+Each time you add a new feature, you will need to reload the extension from the [chrome://extensions/](chrome://extensions/) page.
+
 
 ## Local Development
 
@@ -48,13 +56,6 @@ __Then:__
 
 1. `npm install`
 1. `npm test`
-1. Go to [chrome://extensions/](chrome://extensions/)
-1. Ensure that the Developer mode checkbox in the top right-hand corner is checked.
-1. `npm build`
-1. Click Load unpacked extension… to pop up a file-selection dialog.
-1. Navigate to the directory in which your extension files live, find the `build` directory and select it.
-
-Each time you add a new feature, you will need to reload the extension from the [chrome://extensions/](chrome://extensions/) page.
 
 ## Tests
 
