@@ -26,7 +26,7 @@ function toolTip(entry) {
 }
 
 chrome.runtime.onMessage.addListener(
-  function(request, sender, sendResponse) {
+  function(request) {
     if (request.action == "display-entry") {
       var entry = entryRepository.find(request.search_term) || entryRepository.newNotFoundEntry(request.search_term);
       toolTip(entry).show();

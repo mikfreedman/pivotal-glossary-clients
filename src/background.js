@@ -11,4 +11,4 @@ var displayEntry = function displayEntry(searchTerm) {
   });
 };
 
-var contextMenuSearch = new ContextMenuSearch(chrome, displayEntry);
+new ContextMenuSearch(chrome, displayEntry);
