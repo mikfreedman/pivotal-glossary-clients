@@ -83,3 +83,11 @@ In order to manually deploy this application, you must package it with:
 npm run package
 ```
 Then upload it via the [Chrome Web Store developer dashboard](https://chrome.google.com/webstore/developer/dashboard)
+
+## Related Projects
+
+| Project | Description |
+| ------- | ----------- |
+| [pivotal-cf/glossary](https://github.com/pivotal-cf/glossary) | Glossary upon which this addon is based, hosted here: <https://cf-glossary.cfapps.io> |
+| [Manifaust/cloud-glossary](https://github.com/Manifaust/cloud-glossary) | Another Glossary project, hosted here: <https://glossary.cfapps.io> |
+| [motevets/pivotal-glossary](https://github.com/motevets/pivotal-glossary) | Chrome extension that will expand acronyms based on [pivotal-cf/glossary](https://github.com/pivotal-cf/glossary). [webstore link](https://chrome.google.com/webstore/detail/pivotal-glossary/ldjikeaflhaeahnfcloapnfpnmbjloog) |
