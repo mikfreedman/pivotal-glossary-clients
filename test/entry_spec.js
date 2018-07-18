@@ -23,5 +23,24 @@ describe('Entry', function () {
             expect(entry.url).toEqual("http://example.com/#downtrodden");
         });
     });
+
+    describe("see_also", function () {
+        describe("when there are no see also entries", () => {
+            it("returns undefined", () => {
+                entry = new Entry("http://example.com", {});
+                expect(entry.see_also).toBeUndefined();
+            });
+        });
+
+        describe("when there are see also entries", () => {
+            it("returns an array of entries", function () {
+                entry = new Entry("http://example.com", {see_also: ["word 1", "word2"]});
+                expect(entry.see_also).toEqual([
+                    new Entry("http://example.com", {headword: "word 1"}),
+                    new Entry("http://example.com", {headword: "word2"})
+                ]);
+            });
+        })
+    });
 });
 

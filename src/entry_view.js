@@ -1,8 +1,7 @@
 export class EntryView {
-  constructor(entry, entryRepository, document) {
+  constructor(entry, document) {
     this.entry = entry;
     this.document = document;
-    this.entryRepository = entryRepository;
   }
 
   get html()
@@ -28,7 +27,7 @@ export class EntryView {
     if(this.entry.see_also) {
       output.push('<hr><b>see also</b>:');
       output.push(this.entry.see_also.map((seeAlso) => {
-        return (`<a target='_blank' href='${this.entryRepository.newNotFoundEntry(seeAlso).url}'>${seeAlso}</a>`);
+        return (`<a target='_blank' href='${seeAlso.url}'>${seeAlso.headword}</a>`);
       }).join(', '));
     }
 

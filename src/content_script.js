@@ -8,6 +8,6 @@ chrome.runtime.onMessage.addListener(
     function (request) {
         if (request.action == "display-entry") {
             var entry = entryRepository.find(request.search_term) || entryRepository.newNotFoundEntry(request.search_term);
-            new ToolTip(new EntryView(entry, entryRepository, document).html).show();
+            new ToolTip(new EntryView(entry, document).html).show();
         }
     });
