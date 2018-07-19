@@ -18,7 +18,7 @@ export class ContextMenuSearch {
         this.displayEntry(info.selectionText);
       }
       else {
-        chrome.tabs.executeScript({
+        this.browser.tabs.executeScript({
           file: 'content_script.js'
         }, () => {
           this.displayEntry(info.selectionText);
