@@ -18,7 +18,7 @@ export class EntryRepository {
   }
 
   getData(success) {
-    this.loaded = fetch(this.baseURL + "/words.json", {
+    fetch(this.baseURL + "/words.json", {
       method: 'get'
     }).then(response => {
       return response.json();
