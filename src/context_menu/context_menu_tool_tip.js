@@ -1,6 +1,6 @@
 import Tippy from 'tippy.js';
-
 import 'tippy/themes/light.css';
+import './context_menu_tool_tip.css';
 
 export class ContextMenuToolTip {
     constructor(html) {
@@ -19,7 +19,7 @@ export class ContextMenuToolTip {
             arrow: true,
             maxWidth: '400px',
             interactive: true,
-            theme: 'light rounded',
+            theme: 'light rounded pivotal-glossary',
             html: html
         });
     }
