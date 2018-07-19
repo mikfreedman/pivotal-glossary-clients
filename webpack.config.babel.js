@@ -19,7 +19,12 @@ export default {
             exclude: /node_modules/,
             test: /\.js$/,
             use: {loader: 'babel-loader'},
-        }],
+        },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            }
+        ],
     },
     output: {
         filename: '[name].js',
@@ -27,6 +32,9 @@ export default {
         path: path.join(__dirname, 'build'),
     },
     resolve: {
+        alias: {
+            tippy: path.resolve(__dirname, 'node_modules/tippy.js/dist'),
+        },
         extensions: ['.js'],
         modules: [
             path.join(__dirname, 'src'),
