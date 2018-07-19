@@ -7,13 +7,13 @@ export class EntryView {
   get html()
   {
     var output = [];
-    output.push("<div class='headword'>")
+    output.push("<div class='headword'>");
     output.push(this.entry.headword);
 
     if(this.entry.expansion)
       output.push(`<span class="expansion">(${this.entry.expansion})</span>`);
 
-    output.push("</div>")
+    output.push("</div>");
 
     if(this.entry.definition) {
       output.push(`<div class="definition">${this.entry.definition}</div>`);
