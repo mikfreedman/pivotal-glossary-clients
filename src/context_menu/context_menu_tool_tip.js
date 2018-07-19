@@ -1,7 +1,7 @@
 import Tippy from 'tippy.js';
 
 
-export class ToolTip {
+export class ContextMenuToolTip {
     constructor(html) {
         const selectedTextReference = {
             getBoundingClientRect() {
