@@ -9,10 +9,10 @@ export class ContextMenuSearch {
       contexts:["selection"]
     });
 
-    this.browser.contextMenus.onClicked.addListener(this.getword.bind(this));
+    this.browser.contextMenus.onClicked.addListener(this.getWord.bind(this));
   }
 
-  getword(info) {
+  getWord(info) {
     if (info.menuItemId == "pivotal-glossary") {
       if (this.injected) {
         this.displayEntry(info.selectionText);
