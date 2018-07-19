@@ -1,4 +1,4 @@
-import {ContextMenuSearch} from 'context_menu_search';
+import {ContextMenuSearch} from 'context_menu/context_menu_search';
 
 var displayEntry = function displayEntry(searchTerm) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs){

@@ -12,7 +12,7 @@ var manifest = require('./manifest.template.json');
 export default {
   entry: {
     background: path.join(__dirname, 'src/background.js'),
-    content_script: path.join(__dirname, 'src/content_script.js')
+    context_menu_content_script: path.join(__dirname, 'src/context_menu/context_menu_content_script.js')
   },
     module: {
       rules: [{

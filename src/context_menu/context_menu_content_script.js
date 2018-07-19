@@ -1,6 +1,6 @@
-import {EntryRepository} from './entry_repository';
-import {EntryView} from './entry_view';
-import {ToolTip} from './tool_tip';
+import {EntryRepository} from '../entry_repository';
+import {EntryView} from '../entry_view';
+import {ToolTip} from '../tool_tip';
 
 var entryRepository = new EntryRepository();
 

@@ -19,7 +19,7 @@ export class ContextMenuSearch {
       }
       else {
         this.browser.tabs.executeScript({
-          file: 'content_script.js'
+          file: 'context_menu_content_script.js'
         }, () => {
           this.displayEntry(info.selectionText);
           this.injected = true;

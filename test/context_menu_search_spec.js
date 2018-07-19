@@ -1,4 +1,4 @@
-import {ContextMenuSearch} from '../src/context_menu_search';
+import {ContextMenuSearch} from '../src/context_menu/context_menu_search';
 
 describe('ContextMenuSearch', function () {
   var contextMenuSearch;
