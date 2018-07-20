@@ -23,3 +23,14 @@
 .tippy-tooltip.pivotal-glossary-theme hr {
     border-color: #008774;
 }
+
+.tippy-tooltip.pivotal-glossary-theme ul {
+    list-style-type: '- ';
+}
+
+.tooltip-truncate {
+    width: 380px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

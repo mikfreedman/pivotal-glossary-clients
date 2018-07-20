@@ -1,4 +1,4 @@
-export class EntryView {
+export class ContextMenuEntryView {
   constructor(entry, document) {
     this.entry = entry;
     this.document = document;
@@ -20,11 +20,10 @@ export class EntryView {
     }
 
     if(this.entry.links) {
-      output.push('<hr><b>links</b><ul>');
+      output.push('<hr><b>links</b>') ;
       this.entry.links.forEach((link) => {
-        output.push(`<li><a target='_blank' href='${link}'>${link}</a></li>`);
+        output.push(`<div class="tooltip-truncate"><a target='_blank' href='${link}'>${link}</a></div>`);
       });
-      output.push('</ul>');
     }
 
     if(this.entry.see_also) {
