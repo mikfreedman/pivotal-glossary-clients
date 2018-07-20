@@ -45,6 +45,7 @@ export default {
         new CopyWebpackPlugin([
             {from: 'icons', to: 'icons'},
             {from: '_locales/**/*', flatten: false}
+            // {from: path.join(__dirname, 'node_modules/chrome-options','third_party', '*'), flatten: false, to: 'bower_components/'}
         ]),
         new GenerateJsonPlugin(
             'manifest.json',
