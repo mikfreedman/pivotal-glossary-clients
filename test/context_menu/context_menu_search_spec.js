@@ -7,6 +7,12 @@ describe('ContextMenuSearch', function () {
 
   beforeEach(function() {
     chrome = {
+      runtime: {
+        onInstalled: {
+          addListener: function() {
+          }
+        }
+      }
       tabs: {
         create: function() {
         }
