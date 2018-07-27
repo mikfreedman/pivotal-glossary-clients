@@ -1,8 +1,8 @@
-import {EntryRepository} from '../entry_repository';
+import * as pivotalGlossaryLib from 'pivotal-glossary-lib';
 import {ContextMenuEntryView} from './context_menu_entry_view';
 import {ContextMenuToolTip} from './context_menu_tool_tip';
 
-var entryRepository = new EntryRepository();
+var entryRepository = new pivotalGlossaryLib.EntryRepository();
 
 chrome.runtime.onMessage.addListener(
     function (request) {
