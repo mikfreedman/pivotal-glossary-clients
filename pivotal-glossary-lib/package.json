@@ -24,7 +24,8 @@
     "test": "./node_modules/.bin/karma start --single-run",
     "test-watch": "./node_modules/.bin/karma start",
     "build": "node_modules/.bin/webpack",
-    "pretest": "npm run lint"
+    "pretest": "npm run lint",
+    "prepublish": "echo 'FUNK IS YOUR CONNECTION' && pwd && npm install --ignore-scripts && npm run build"
   },
   "author": "Mik Freedman",
   "license": "MIT"
