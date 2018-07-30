@@ -77,12 +77,12 @@ The Circle CI build must be configured with the following environment variables:
 
 This page: https://developer.chrome.com/webstore/using_webstore_api explains how to go about getting these keys. It should go without saying, but **do not** store these variables in your `circle.yml` but rather as encrypted variables on circleci itself.
 
-In order to manually deploy this application, you must package it with:
+In order to manually deploy this application, you must build it with:
 
 ```bash
-npm run package
+npm run build
 ```
-Then upload it via the [Chrome Web Store developer dashboard](https://chrome.google.com/webstore/developer/dashboard)
+Then upload the zip from `/dist` via the [Chrome Web Store developer dashboard](https://chrome.google.com/webstore/developer/dashboard)
 
 ## Related Projects
 
