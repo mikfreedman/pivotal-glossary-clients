@@ -4,7 +4,7 @@
 >This chrome extension will show results from [cf-glossary.cfapps.io](http://cf-glossary.cfapps.io/)
 
 
-[![CircleCI](https://circleci.com/gh/mikfreedman/pivotal-glossary-addon.svg?style=svg)](https://circleci.com/gh/mikfreedman/pivotal-glossary-addon)
+[![CircleCI](https://circleci.com/gh/mikfreedman/pivotal-glossary-clients.svg?style=svg)](https://circleci.com/gh/mikfreedman/pivotal-glossary-clients)
 
 * You use it via the Chrome context menu by selecting "Lookup in Pivotal Glossary"
 * The shell for this application was generated using [Extensionizr](http://extensionizr.com)
@@ -66,7 +66,7 @@ npm test
 
 ## Deployment
 
-This application is automatically deployed to the Chrome Web Store via CircleCI ([mikfreedman/pivotal-glossary-addon](https://circleci.com/gh/mikfreedman/pivotal-glossary-addon)).
+This application is automatically deployed to the Chrome Web Store via CircleCI ([mikfreedman/pivotal-glossary-clients](https://circleci.com/gh/mikfreedman/pivotal-glossary-clients)).
 
 The Circle CI build must be configured with the following environment variables:
 
