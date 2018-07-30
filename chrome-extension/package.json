@@ -1,7 +1,7 @@
 {
   "name": "pivotal-glossary",
   "repository": "http://github.com/pivotal/pivotal-glossary",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "dependencies": {
     "pivotal-glossary-lib": "file:../pivotal-glossary-lib"
   },
