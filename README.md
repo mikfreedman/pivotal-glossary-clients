@@ -9,7 +9,7 @@ The Chrome Extension can be found here: [/chrome-extension](chrome-extension)
 
 ## Pivotal Glossary Lib
 
-The Javascript Library for accessing Pivotal Glossary can be found here: [/pivotal-glossary](pivotal-glossary)
+The Javascript Library for accessing Pivotal Glossary can be found here: [/pivotal-glossary-lib](pivotal-glossary-lib)
 
 ## Related Projects
 
