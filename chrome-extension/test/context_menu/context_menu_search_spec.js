@@ -1,4 +1,4 @@
-import {ContextMenuSearch} from '../src/context_menu/context_menu_search';
+import {ContextMenuSearch} from '../../src/context_menu/context_menu_search';
 
 describe('ContextMenuSearch', function () {
   var contextMenuSearch;
@@ -12,7 +12,7 @@ describe('ContextMenuSearch', function () {
           addListener: function() {
           }
         }
-      }
+      },
       tabs: {
         create: function() {
         }
@@ -30,12 +30,13 @@ describe('ContextMenuSearch', function () {
     spyOn(chrome.tabs, "create");
     spyOn(chrome.contextMenus, "create");
     spyOn(chrome.contextMenus.onClicked, "addListener");
+    spyOn(chrome.runtime.onInstalled, "addListener");
   });
 
   describe("Pivotal Glossary Addon", function() {
     it("adds the listener", function() {
       contextMenuSearch = new ContextMenuSearch(chrome);
-      expect(chrome.contextMenus.create).toHaveBeenCalled();
+      expect(chrome.runtime.onInstalled.addListener).toHaveBeenCalled();
     });
   });
 });

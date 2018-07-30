@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'src/*.js', watched:true, served:false, included:false, nocache:false},
-      {pattern: 'test/*spec.js',watched:true,served:true,included:true}
+      {pattern: 'src/*/**.js', watched:true, served:false, included:false, nocache:false},
+      {pattern: 'test/*/**spec.js',watched:true,served:true,included:true}
       /*parameters*/
           //watched: if autoWatch is true all files that have set watched to true will be watched for changes
           //served: should the files be served by Karma's webserver?
@@ -37,7 +37,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      './test/*spec.js': ['webpack']
+      './test/*/**spec.js': ['webpack']
     },
 
     webpackMiddleware: {
