@@ -7,6 +7,10 @@
 
 The Chrome Extension can be found here: [/chrome-extension](chrome-extension)
 
+## Gmail Addon
+
+The Gmail Addon can be found here: [/gmail-addon](gmail-addon)
+
 ## Pivotal Glossary Lib
 
 The Javascript Library for accessing Pivotal Glossary can be found here: [/pivotal-glossary-lib](pivotal-glossary-lib)
