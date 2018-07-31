@@ -1,0 +1,43 @@
+{
+  "name": "pivotal-glossary",
+  "repository": "http://github.com/pivotal/pivotal-glossary",
+  "version": "1.0.0",
+  "dependencies": {
+    "pivotal-glossary-lib": "file:../pivotal-glossary-lib",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "@google/clasp": "^1.1.5",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "copy-webpack-plugin": "^4.5.2",
+    "gas-local": "^1.3.0",
+    "jasmine-core": "^2.6.3",
+    "jshint": "^2.9.5",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-jasmine": "^1.1.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-spec-reporter": "0.0.31",
+    "karma-webpack": "^2.0.3",
+    "lodash.template": "^4.4.0",
+    "webpack": "^3.11.0",
+    "wrapper-webpack-plugin": "^1.0.0"
+  },
+  "author": {
+    "name": "Michael Freedman"
+  },
+  "scripts": {
+    "build": "node_modules/.bin/webpack",
+    "deploy": "npm run build && ./node_modules/.bin/clasp push",
+    "lint": "node_modules/.bin/jshint src/**.js",
+    "pretest": "npm run lint",
+    "test": "./node_modules/.bin/karma start --single-run",
+    "test-watch": "./node_modules/.bin/karma start"
+  },
+  "repository": "http://github.com/pivotal/pivotal-glossary",
+  "license": "MIT"
+}
