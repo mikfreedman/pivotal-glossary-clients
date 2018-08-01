@@ -1,10 +1,12 @@
 import path from 'path';
 import webpack from 'webpack';
+import GenerateJsonPlugin from 'generate-json-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import fs from 'fs';
 import WrapperPlugin from 'wrapper-webpack-plugin';
 import template from 'lodash.template';
 
+var manifest = require('./appscript.template.json');
 var pkg = require('./package.json');
 pkg.currentDate = (new Date()).toISOString();
 
@@ -41,6 +43,12 @@ export default {
         ]),
         new WrapperPlugin({
             header: template(headerDoc)(pkg)
-        })
+        }),
+        new GenerateJsonPlugin(
+            'appsscript.json',
+            manifest,
+            2
+        ),
+
     ]
 };
