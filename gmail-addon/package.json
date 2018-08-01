@@ -7,7 +7,7 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
-    "@google/clasp": "^1.1.5",
+    "@google/clasp": "^1.4.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
