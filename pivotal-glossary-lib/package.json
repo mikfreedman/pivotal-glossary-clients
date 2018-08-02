@@ -1,6 +1,6 @@
 {
   "name": "pivotal-glossary-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library to access Pivotal Glossary",
   "main": "dist/pivotal_glossary_lib.js",
   "devDependencies": {
