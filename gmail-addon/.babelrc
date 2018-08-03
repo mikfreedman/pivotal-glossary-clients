@@ -1,4 +1,7 @@
 {
   "presets": ["es2015"],
-  "plugins": ["transform-runtime"]
+   "plugins": [
+     "transform-member-expression-literals",
+     "transform-es3-property-literals"
+   ]
 }

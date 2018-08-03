@@ -1,3 +1,6 @@
+import 'es5-shim'
+import 'babel-polyfill'
+
 import {EntryRepository} from './entry_repository';
 
 var entryRepository = new EntryRepository();
