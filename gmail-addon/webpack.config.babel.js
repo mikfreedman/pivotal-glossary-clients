@@ -1,10 +1,11 @@
-import path from 'path';
-import webpack from 'webpack';
-import GenerateJsonPlugin from 'generate-json-webpack-plugin';
-import CopyWebpackPlugin from 'copy-webpack-plugin'
-import fs from 'fs';
-import WrapperPlugin from 'wrapper-webpack-plugin';
-import template from 'lodash.template';
+
+var path = require('path');
+var webpack = require('webpack');
+var GenerateJsonPlugin = require('generate-json-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var fs = require('fs');
+var WrapperPlugin = require('wrapper-webpack-plugin');
+var template = require('lodash.template');
 
 var manifest = require('./appscript.template.json');
 var pkg = require('./package.json');
@@ -12,7 +13,7 @@ pkg.currentDate = (new Date()).toISOString();
 
 var headerDoc = fs.readFileSync('./header.js', 'utf8');
 
-export default {
+module.exports =  {
     entry: [path.join(__dirname, 'src/app.js')],
     module: {
         rules: [{
