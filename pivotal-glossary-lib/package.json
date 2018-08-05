@@ -25,7 +25,7 @@
     "test-watch": "./node_modules/.bin/karma start",
     "build": "node_modules/.bin/webpack",
     "pretest": "npm run lint",
-    "prepublish": "npm install --ignore-scripts && npm run build"
+    "prepare": "npm install --ignore-scripts && npm run build"
   },
   "author": "Mik Freedman",
   "license": "MIT"
