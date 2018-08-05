@@ -4,6 +4,9 @@
     "https://www.googleapis.com/auth/gmail.addons.current.message.readonly",
     "https://www.googleapis.com/auth/script.external_request"
   ],
+  "urlFetchWhitelist": [
+    "https://cf-glossary.cfapps.io/"
+  ],
   "gmail": {
     "name": "Pivotal Glossary",
     "logoUrl": "https://raw.githubusercontent.com/mikfreedman/pivotal-glossary-clients/master/chrome-extension/icons/pivotal-glossary-48.png",
