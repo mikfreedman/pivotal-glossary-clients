@@ -35,9 +35,6 @@ module.exports =  {
         ],
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            _: 'underscore'
-        }),
         new CopyWebpackPlugin([
             {from: path.join(__dirname, 'src', '**', '*.html'), to: path.join(__dirname, 'dist'), flatten: true},
             {from: path.join(__dirname, 'src', '**', 'Wrapper.gs'), to: path.join(__dirname, 'dist', 'Wrapper.js'), flatten: true}

@@ -1,5 +1,5 @@
-import * as pivotalGlossaryLib from 'pivotal-glossary-lib';
-
+import 'core-js/fn/object';
+import {Entry} from './entry';
 
 export class EntryRepository {
     constructor(baseURL = "https://cf-glossary.cfapps.io") {
@@ -14,24 +14,24 @@ export class EntryRepository {
     }
 
     all() {
-      return this.entries;
+        return this.entries;
     }
 
     getData() {
-       var response = UrlFetchApp.fetch(this.baseURL + "/words.json", {
-        method: "get",
-        muteHttpExceptions: true
-      });
+        var response = UrlFetchApp.fetch(this.baseURL + "/words.json", {
+            method: "get",
+            muteHttpExceptions: true
+        });
 
-      var rawResponse = response.getContentText();
-      var parsedResponse = JSON.parse(rawResponse);
+        var rawResponse = response.getContentText();
+        var parsedResponse = JSON.parse(rawResponse);
 
-      this.entries = Object.entries(parsedResponse).map(([key, value]) => {
-                return new pivotalGlossaryLib.Entry(this.baseURL, value);
-      });
+        this.entries = Object.entries(parsedResponse).map(([key, value]) => {
+            return new Entry(this.baseURL, value);
+        });
     }
 
     newNotFoundEntry(searchTerm) {
-        return new pivotalGlossaryLib.Entry(this.baseURL, {headword: searchTerm, definition: "No Entry Found"});
+        return new Entry(this.baseURL, {headword: searchTerm, definition: "No Entry Found"});
     }
 }
