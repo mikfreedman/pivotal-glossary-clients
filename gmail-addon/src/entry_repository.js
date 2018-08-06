@@ -18,17 +18,29 @@ export class EntryRepository {
     }
 
     getData() {
+        var parsedResponse = JSON.parse(this._fetch());
+
+        this.entries = Object.entries(parsedResponse).map(([key, value]) => {
+            return new Entry(this.baseURL, value);
+        });
+    }
+
+    _fetch() {
+        var cache = CacheService.getScriptCache();
+        var cached = cache.get("cf-glossary-words");
+
+        if (cached != null) {
+            return cached;
+        }
+
         var response = UrlFetchApp.fetch(this.baseURL + "/words.json", {
             method: "get",
             muteHttpExceptions: true
         });
 
         var rawResponse = response.getContentText();
-        var parsedResponse = JSON.parse(rawResponse);
-
-        this.entries = Object.entries(parsedResponse).map(([key, value]) => {
-            return new Entry(this.baseURL, value);
-        });
+        cache.put("cf-glossary-words", rawResponse, 6000);
+        return rawResponse;
     }
 
     newNotFoundEntry(searchTerm) {
