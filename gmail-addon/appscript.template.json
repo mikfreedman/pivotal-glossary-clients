@@ -16,7 +16,7 @@
       "onTriggerFunction": "buildAddOn"
     }],
     "openLinkUrlPrefixes": [
-      "https://mail.google.com/"
+      "https://cf-glossary.cfapps.io/"
     ],
     "primaryColor": "#008774",
     "secondaryColor": "#00253E"
