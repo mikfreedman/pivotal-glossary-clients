@@ -9,7 +9,7 @@
   ],
   "gmail": {
     "name": "Pivotal Glossary",
-    "logoUrl": "https://raw.githubusercontent.com/mikfreedman/pivotal-glossary-clients/master/chrome-extension/icons/pivotal-glossary-48.png",
+    "logoUrl": "http://mjfreedman.com/assets/images/pivotal-glossary-48.png",
     "contextualTriggers": [{
       "unconditional": {
       },
