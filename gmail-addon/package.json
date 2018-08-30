@@ -1,6 +1,6 @@
 {
   "name": "pivotal-glossary",
-  "repository": "http://github.com/pivotal/pivotal-glossary",
+  "repository": "https://github.com/mikfreedman/pivotal-glossary-clients/tree/master/gmail-addon",
   "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
