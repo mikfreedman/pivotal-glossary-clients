@@ -5,7 +5,7 @@
     "https://www.googleapis.com/auth/script.external_request"
   ],
   "gmail": {
-    "name": "Pivotal Glossary",
+    "name": "Glossary",
     "logoUrl": "https://raw.githubusercontent.com/mikfreedman/pivotal-glossary-clients/master/chrome-extension/icons/pivotal-glossary-48.png",
     "contextualTriggers": [{
       "unconditional": {
