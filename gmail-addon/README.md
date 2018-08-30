@@ -1,4 +1,4 @@
-# Pivotal Glossary Sheets Addon
+Pivotal Glossary Gmail Addon
 
 ## Installation
 
