@@ -8,7 +8,7 @@
     "https://cf-glossary.cfapps.io/"
   ],
   "gmail": {
-    "name": "Pivotal Glossary",
+    "name": "Glossary",
     "logoUrl": "http://mjfreedman.com/assets/images/pivotal-glossary-48.png",
     "contextualTriggers": [{
       "unconditional": {
