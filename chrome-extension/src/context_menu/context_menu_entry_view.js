@@ -19,6 +19,10 @@ export class ContextMenuEntryView {
       output.push(`<div class="definition">${this.entry.definition}</div>`);
     }
 
+    if(this.entry.html) {
+      output.push(`<div class="definition">${this.entry.html}</div>`);
+    }
+
     if(this.entry.links) {
       output.push('<hr><b>links</b>') ;
       this.entry.links.forEach((link) => {

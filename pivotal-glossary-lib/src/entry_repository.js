@@ -1,39 +1,31 @@
 import {Entry} from './entry';
 
 export class EntryRepository {
-    constructor(baseURL = "https://cf-glossary.cfapps.io") {
-        this.baseURL = baseURL;
-    }
+  constructor(baseURL = "http://wtf.eng.vmware.com/api/def/get/") {
+    this.baseURL = baseURL;
+  }
 
-    _find(searchText) {
-        return this.entries.find((def) => {
-            return def.matches(searchText);
-        });
-    }
-
-    find(searchText) {
-        if(!this.entries) {
-            return this.getData().then(() => {
-                return this._find(searchText);
-            });
-        } else {
-            return new Promise((resolve) => { resolve(this._find(searchText)); });
+  find(searchText) {
+    let url = `${this.baseURL}?word=${searchText}`
+    return fetch(url)
+      .then(res => res.json())
+      .then(body => {
+        if (body.error) {
+          console.log(`Glossary Extension Fetch Error: ${body.error}`);
+          return;
         }
-    }
+        if (body.status === 'error')
+          return newNotFoundEntry(searchText);
 
-    getData() {
-        return fetch(this.baseURL + "/words.json", {
-            method: 'get'
-        }).then(response => {
-            return response.json();
-        }).then(response => {
-            this.entries = Object.entries(response).map(([key, value]) => {
-                return new Entry(this.baseURL, value);
-            });
-        });
-    }
+        return new Entry(url, body.defs[0]);
+      })
+      .catch(err => {
+        console.log(`Glossary Extension Fetch Error`);
+        console.error(err);
+      });
+  }
 
-    newNotFoundEntry(searchTerm) {
-        return new Entry(this.baseURL, {headword: searchTerm, definition: "No Entry Found"});
-    }
+  newNotFoundEntry(searchTerm) {
+    return new Entry(this.baseURL, {headword: searchTerm, definition: "No Entry Found"});
+  }
 }

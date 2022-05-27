@@ -6,12 +6,12 @@ export class Entry {
         this.baseURL = baseURL;
     }
 
-    get url() {
-        return `${this.baseURL}/#${this.slug}`;
+    get headword() {
+      return this.word;
     }
 
-    matches(term) {
-        return this.slug === Slugger.slug(term);
+    get url() {
+        return this.baseURL;
     }
 
     set see_also(see_also) {
